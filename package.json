@@ -1,22 +1,21 @@
 {
-  "name": "electron-quick-start",
+  "name": "nse-data-display",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Application that fetches NSE data and displays.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Rohan Antony",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.0"
+    "electron": "^2.0.0"
+  },
+  "dependencies": {
+    "url-join": "^4.0.0"
   }
 }
