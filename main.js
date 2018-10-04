@@ -26,11 +26,16 @@ function createWindow () {
     day = val.day;
     month = val.month;
     year = val.year;
-    let writeFilePath = utils.createDirIfNotExist(year)
+    utils.createDirIfNotExist('tmp')
+    utils.createDirIfNotExist('tmp/data')
+    let writeFilePath = utils.createDirIfNotExist('tmp/download')
     let fileName = utils.constructFilename(day, month, year)
     let fileURL = utils.constructFileURL(day, month, year)
-    utils.fetchFile(fileURL, path.join(writeFilePath,fileName), function(){
-      console.log("fetched file " + fileName)
+    utils.fetchFile(fileURL, path.join(writeFilePath,fileName), function(writeFile){
+      console.log("fetched file " + writeFile)
+      utils.unzipFiles(writeFile, utils.constructFilename(day, month, year, true), function(){
+        console.log("Unzipped the file")
+      })
     })
   })
 
